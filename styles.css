@@ -253,8 +253,16 @@ strong {
     transform: translateY(-1px);
 }
 
-.btn-github {
+.btn-github,
+.btn-demo {
+    flex: 1;
+}
+
+.project-btns {
+    display: flex;
+    gap: 8px;
     margin-top: auto;
+    flex-wrap: wrap;
 }
 
 .btn-lg {
@@ -582,52 +590,75 @@ strong {
    Skills Section
    ============================================ */
 
-.skills-groups {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
 }
 
-.skill-group {
+.skill-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 28px 32px;
-    min-width: 220px;
-    text-align: center;
+    padding: 28px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
-.skill-group-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    margin-bottom: 16px;
+.skill-card:hover {
+    border-color: rgba(79, 140, 255, 0.22);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(79, 140, 255, 0.07);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.skill-card-emoji {
+    font-size: 1.35rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.skill-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
 }
 
 .skill-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
 }
 
 .pill {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
-    padding: 8px 18px;
+    padding: 7px 16px;
     background: rgba(79, 140, 255, 0.06);
     border: 1px solid var(--border);
     border-radius: 100px;
     color: var(--text);
-    transition: border-color var(--transition), background var(--transition);
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+    white-space: nowrap;
 }
 
 .pill:hover {
     border-color: var(--accent);
     background: var(--accent-glow);
+    color: var(--accent);
 }
 
 /* ============================================
@@ -905,13 +936,9 @@ strong {
         font-size: 1.4rem;
     }
 
-    .skills-groups {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-    }
-
-    .skill-group {
-        min-width: auto;
-        width: 100%;
     }
 
     .contact-links {
@@ -947,5 +974,9 @@ strong {
     .project-card {
         min-width: 260px;
         max-width: 280px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }

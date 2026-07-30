@@ -41,7 +41,7 @@
     // --- Scroll reveal animation ---
     const revealTargets = [
         '.project-card',
-        '.skill-group',
+        '.skill-card',
         '.achievement-card',
         '.about-content',
         '.contact-card',
