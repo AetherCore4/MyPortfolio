@@ -587,12 +587,111 @@ strong {
 }
 
 /* ============================================
+   Experience Section
+   ============================================ */
+
+.experience-timeline {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.experience-card:hover {
+    border-color: rgba(79, 140, 255, 0.22);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(79, 140, 255, 0.07);
+}
+
+.experience-icon-wrap {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: rgba(79, 140, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.experience-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.experience-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.experience-date {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+.experience-company {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.experience-details {
+    padding-left: 0;
+}
+
+.experience-details li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    padding: 4px 0;
+    position: relative;
+    padding-left: 18px;
+    line-height: 1.6;
+}
+
+.experience-details li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.experience-actions {
+    margin-top: 16px;
+}
+
+/* ============================================
    Skills Section
    ============================================ */
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     align-items: stretch;
 }
@@ -667,7 +766,7 @@ strong {
 
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
@@ -979,7 +1078,7 @@ strong {
     }
 
     .achievements-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .contact-links {
